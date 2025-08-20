@@ -1,4 +1,6 @@
 window.addEventListener('click', function (event) {
+  const cartWrapperNode = event.target.closest('.cart-wrapper');
+
   let counter;
 
   if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
@@ -11,7 +13,9 @@ window.addEventListener('click', function (event) {
 
     if (event.target.dataset.action === 'minus') {
       if (parseInt(counter.innerText) > 1) {
-        counter.innerText = --counter.innerText;
+        counter.innerText = counter.innerText - 1;
+      } else if (cartWrapperNode && parseInt(counter.innerText) > 0) {
+        counter.innerText = counter.innerText - 1;
       }
     }
   }

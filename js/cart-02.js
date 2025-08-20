@@ -3,9 +3,9 @@ const cartWrapperNode = document.querySelector('.cart-wrapper');
 window.addEventListener('click', function (event) {
   if (event.target.hasAttribute('data-cart')) {
     // Находим карточку с товаром, внутри которой был совершён клик
-    const card = event.target.closest('.card');
+    const card = event.target.closest('.card'); // это родитель карточки на которой был клик
 
-    // Собираем данные с этого товара и записываем их в единый объект productInfo
+    // Собираем данные с этого товара и записываем их в единый объект productInfo после клика на + в корзину
     const productInfo = {
       id: card.dataset.id,
       imgSrc: card.querySelector('.product-img').getAttribute('src'),
@@ -57,4 +57,13 @@ window.addEventListener('click', function (event) {
 
     card.querySelector('[data-counter]').innerText = '1';
   }
+
+  const listCard = document.querySelectorAll('.cart-wrapper > .cart-item');
+
+  listCard.forEach(product => {
+    const counter = parseInt(product.querySelector('[data-counter]').innerText);
+    if (counter === 0) {
+      product.remove();
+    }
+  });
 });
