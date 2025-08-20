@@ -55,6 +55,6 @@ window.addEventListener('click', function (event) {
       cartWrapperNode.insertAdjacentHTML('beforeEnd', cartItemHTML);
     }
 
-    card.querySelector('[data-counter]').innerText = 1;
+    card.querySelector('[data-counter]').innerText = '1';
   }
 });
