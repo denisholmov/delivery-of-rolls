@@ -16,7 +16,14 @@ window.addEventListener('click', function (event) {
       counter: card.querySelector('[data-counter]').innerText,
     };
 
-    const cartItemHTML = `<div class="cart-item" data-id="${productInfo.id}">
+    // Это проверка нужного нам айдишника в корзине
+    const itemInCart = cartWrapperNode.querySelector(`[data-id="${card.dataset.id}"]`);
+
+    if (itemInCart) {
+      itemInCart.querySelector('[data-counter]').innerText =
+        parseInt(itemInCart.querySelector('[data-counter]').innerText) + parseInt(productInfo.counter);
+    } else {
+      const cartItemHTML = `<div class="cart-item" data-id="${productInfo.id}">
 								<div class="cart-item__top">
 									<div class="cart-item__img">
 										<img src="${productInfo.imgSrc}">
@@ -45,14 +52,9 @@ window.addEventListener('click', function (event) {
 								</div>
 							</div>`;
 
-    // Это проверка нужного нам айдишника в корзине
-    const existingItem = cartWrapperNode.querySelector(`[data-id="${card.dataset.id}"]`);
-
-    if (existingItem) {
-      existingItem.querySelector('[data-counter]').innerText =
-        parseInt(existingItem.querySelector('[data-counter]').innerText) + parseInt(productInfo.counter);
-    } else {
       cartWrapperNode.insertAdjacentHTML('beforeEnd', cartItemHTML);
     }
+
+    card.querySelector('[data-counter]').innerText = 1;
   }
 });
