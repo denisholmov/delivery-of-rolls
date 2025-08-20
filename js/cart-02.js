@@ -19,11 +19,11 @@ window.addEventListener('click', function (event) {
     const cartItemHTML = `<div class="cart-item" data-id="${productInfo.id}">
 								<div class="cart-item__top">
 									<div class="cart-item__img">
-										<img src="${productInfo.title}">
+										<img src="${productInfo.imgSrc}">
 									</div>
 									<div class="cart-item__desc">
 										<div class="cart-item__title">${productInfo.title}</div>
-										<div class="cart-item__weight">${productInfo.itemsInBox} / ${productInfo.title}</div>
+										<div class="cart-item__weight">${productInfo.weight} / ${productInfo.price}</div>
 
 										<!-- cart-item__details -->
 										<div class="cart-item__details">
@@ -45,6 +45,14 @@ window.addEventListener('click', function (event) {
 								</div>
 							</div>`;
 
-    cartWrapperNode.insertAdjacentHTML('beforeEnd', cartItemHTML);
+    // Это проверка нужного нам айдишника в корзине
+    const existingItem = cartWrapperNode.querySelector(`[data-id="${card.dataset.id}"]`);
+
+    if (existingItem) {
+      existingItem.querySelector('[data-counter]').innerText =
+        parseInt(existingItem.querySelector('[data-counter]').innerText) + parseInt(productInfo.counter);
+    } else {
+      cartWrapperNode.insertAdjacentHTML('beforeEnd', cartItemHTML);
+    }
   }
 });
