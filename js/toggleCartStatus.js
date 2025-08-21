@@ -4,7 +4,7 @@ function toggleCartStatus() {
 
   const isEmpty = cartWrapperNode.children.length === 0;
 
-  if (isEmpty && !dataCartEmptyNode) {
+  if (isEmpty) {
     cartWrapperNode.insertAdjacentHTML(
       'beforebegin',
       `
@@ -15,7 +15,7 @@ function toggleCartStatus() {
     );
   }
 
-  if (!isEmpty && dataCartEmptyNode) {
+  if (!isEmpty) {
     dataCartEmptyNode.remove();
   }
 }

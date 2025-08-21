@@ -18,6 +18,7 @@ window.addEventListener('click', function (event) {
         event.target.closest('.cart-item').remove();
 
         toggleCartStatus();
+        toggleOrderButton();
       }
     }
   }
