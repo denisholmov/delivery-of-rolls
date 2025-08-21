@@ -17,7 +17,7 @@ window.addEventListener('click', function (event) {
       } else if (cartWrapperNode && parseInt(counter.innerText) === 1) {
         event.target.closest('.cart-item').remove();
 
-        toggleCartStatus(true);
+        toggleCartStatus();
       }
     }
   }

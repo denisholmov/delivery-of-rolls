@@ -54,7 +54,7 @@ window.addEventListener('click', function (event) {
 
       cartWrapperNode.insertAdjacentHTML('beforeEnd', cartItemHTML);
 
-      toggleCartStatus(false);
+      toggleCartStatus();
     }
 
     card.querySelector('[data-counter]').innerText = '1';
