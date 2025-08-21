@@ -1,5 +1,5 @@
 function calculateTotalPrice() {
-  const cartItems = document.querySelectorAll('.cart-wrapper > .cart-item');
+  const cartItems = document.querySelectorAll('.cart-item');
 
   return Array.from(cartItems).reduce((sum, item) => {
     return (
