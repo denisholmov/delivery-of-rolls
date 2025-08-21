@@ -30,7 +30,7 @@ window.addEventListener('click', function (event) {
 									</div>
 									<div class="cart-item__desc">
 										<div class="cart-item__title">${productInfo.title}</div>
-										<div class="cart-item__weight">${productInfo.weight} / ${productInfo.price}</div>
+										<div class="cart-item__weight">${productInfo.itemsInBox} / ${productInfo.weight}</div>
 
 										<!-- cart-item__details -->
 										<div class="cart-item__details">
