@@ -3,7 +3,7 @@ function toggleCartStatus(status) {
   const cartWrapperNode = document.querySelector('.cart-wrapper');
 
   if (status) {
-    if (!dataCartEmptyNode) {
+    if (!dataCartEmptyNode && cartWrapperNode.children.length === 0) {
       cartWrapperNode.insertAdjacentHTML(
         'beforebegin',
         `<div data-cart-empty="" class="alert alert-secondary" role="alert">
