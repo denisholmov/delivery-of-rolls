@@ -19,7 +19,7 @@ function toggleCartStatus() {
     );
   }
 
-  if (!isEmpty) {
+  if (!isEmpty && dataCartEmptyNode) {
     dataCartEmptyNode.remove();
 
     cardBodyNode.insertAdjacentHTML(
