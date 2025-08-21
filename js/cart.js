@@ -56,7 +56,7 @@ window.addEventListener('click', function (event) {
 
       toggleCartStatus();
     }
-    calculateTotalPrice();
+    updateTotalPriceDisplay();
     card.querySelector('[data-counter]').innerText = '1';
   }
 });

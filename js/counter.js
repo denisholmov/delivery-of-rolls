@@ -21,6 +21,6 @@ window.addEventListener('click', function (event) {
       }
     }
 
-    calculateTotalPrice();
+    updateTotalPriceDisplay();
   }
 });
