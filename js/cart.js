@@ -53,6 +53,8 @@ window.addEventListener('click', function (event) {
 							</div>`;
 
       cartWrapperNode.insertAdjacentHTML('beforeEnd', cartItemHTML);
+
+      toggleCartStatus(false);
     }
 
     card.querySelector('[data-counter]').innerText = '1';
