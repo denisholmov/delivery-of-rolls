@@ -5,7 +5,7 @@ function toggleOrderButton() {
   const dataCartEmptyNode = document.querySelector('#order-form');
   const cardBodyNode = cartWrapperNode.closest('.card-body');
 
-  const isEmpty = cartWrapperNode.children.length === 0;
+  const isEmpty = cartWrapperNode.children.length <= 0;
 
   if (isEmpty) {
     dataCartEmptyNode.remove();
