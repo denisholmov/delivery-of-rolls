@@ -13,9 +13,9 @@ window.addEventListener('click', function (event) {
 
     if (event.target.dataset.action === 'minus') {
       if (parseInt(counter.innerText) > 1) {
-        counter.innerText = counter.innerText - 1;
-      } else if (cartWrapperNode && parseInt(counter.innerText) > 0) {
-        counter.innerText = counter.innerText - 1;
+        counter.innerText = --counter.innerText;
+      } else if (cartWrapperNode && parseInt(counter.innerText) === 1) {
+        event.target.closest('.cart-item').remove();
       }
     }
   }

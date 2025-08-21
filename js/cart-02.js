@@ -57,13 +57,4 @@ window.addEventListener('click', function (event) {
 
     card.querySelector('[data-counter]').innerText = '1';
   }
-
-  const listCard = document.querySelectorAll('.cart-wrapper > .cart-item');
-
-  listCard.forEach(product => {
-    const counter = parseInt(product.querySelector('[data-counter]').innerText);
-    if (counter === 0) {
-      product.remove();
-    }
-  });
 });
