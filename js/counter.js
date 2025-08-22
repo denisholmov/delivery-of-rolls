@@ -20,11 +20,13 @@ window.addEventListener('click', function (event) {
         toggleCartStatus();
 
         updateTotalPriceDisplay();
+        updateDeliveryInfoCart();
       }
     }
 
     if (event.target.hasAttribute('data-action') && event.target.closest('.cart-wrapper')) {
       updateTotalPriceDisplay();
+      updateDeliveryInfoCart();
     }
   }
 });

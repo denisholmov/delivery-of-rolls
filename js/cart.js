@@ -57,6 +57,7 @@ window.addEventListener('click', function (event) {
       toggleCartStatus();
     }
     updateTotalPriceDisplay();
+    updateDeliveryInfoCart();
     card.querySelector('[data-counter]').innerText = '1';
   }
 });
